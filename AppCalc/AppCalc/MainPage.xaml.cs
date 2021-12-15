@@ -204,7 +204,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Somar(object sender, EventArgs e)
@@ -290,7 +290,7 @@ namespace AppCalc
         {
             try
             {
-                if (txt_Resultado.Text != "")
+                if (txt_Resultado.Text != null)
                 {
                     double inv = double.Parse(txt_Resultado.Text);
                     inv *= -1;
