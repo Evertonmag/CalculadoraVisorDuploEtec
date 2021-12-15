@@ -1,35 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCalc.MainPage" BackgroundColor="#333">
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            
-            <Style x:Key="botaocomum" TargetType="Button">
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="VerticalOptions" Value="Fill" />
-                <Setter Property="FontSize" Value="Title" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="CornerRadius" Value="5" />
-            </Style>
-            
-            <Style x:Key="botaoClaro" TargetType="Button" BasedOn="{StaticResource botaocomum}">
-                <Setter Property="BackgroundColor" Value="#CCC" />
-            </Style>
-            
-            <Style x:Key="botaoEscuro" TargetType="Button" BasedOn="{StaticResource botaocomum}">
-                <Setter Property="BackgroundColor" Value="DarkSlateGray" />
-                <Setter Property="TextColor" Value="#FFF" />
-            </Style>
-            
-            <Style x:Key="botaoOperacoes" TargetType="Button" BasedOn="{StaticResource botaocomum}">
-                <Setter Property="BackgroundColor" Value="DarkOrange" />
-                <Setter Property="TextColor" Value="white" />
-            </Style>
-            
-        </ResourceDictionary>
-    </ContentPage.Resources>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppCalc.MainPage" BackgroundColor="#000">
 
     <ContentPage.Content>
             <Grid  RowDefinitions = " *, *, *, *, *, *, * "
@@ -72,17 +45,17 @@
 
                 <!--Linha 7 da calculadora com botões de acoes-->
                 <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="0" Clicked="Button_Clicked_0" Style="{StaticResource botaoClaro}" />
-                <Button Grid.Row="6" Grid.Column="2" Text="." Clicked="Button_Clicked_Ponto" Style="{StaticResource botaoClaro}" />
+                <Button Grid.Row="6" Grid.Column="2" Text="," Clicked="Button_Clicked_Ponto" Style="{StaticResource botaoClaro}" />
                 <Button Grid.Row="6" Grid.Column="3" Text="=" Clicked="Button_Clicked_Igual" Style="{StaticResource botaoOperacoes}" />
 
                 <Label x:Name="rodape" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" 
-                   Text="Aprendendo programação mobile na Etec!"
-                   FontSize="Title" TextColor="White" HorizontalTextAlignment="Center" >
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
-                                Android="UbuntuMono-Regular.ttf#UbuntuMono-Regular" />
-                </Label.FontFamily>
-            </Label>
+                       Text="Aprendendo programação mobile na Etec!"
+                       FontSize="Title" TextColor="White" HorizontalTextAlignment="Center" >
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
+                                    Android="UbuntuMono-Regular.ttf#UbuntuMono-Regular" />
+                    </Label.FontFamily>
+                </Label>
 
         </Grid>
     </ContentPage.Content>

@@ -3,6 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCalc.App">
     <Application.Resources>
+        <Style x:Key="botaocomum" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Fill" />
+            <Setter Property="FontSize" Value="Title" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
 
+        <Style x:Key="botaoClaro" TargetType="Button" BasedOn="{StaticResource botaocomum}">
+            <Setter Property="BackgroundColor" Value="#CCC" />
+        </Style>
+
+        <Style x:Key="botaoEscuro" TargetType="Button" BasedOn="{StaticResource botaocomum}">
+            <Setter Property="BackgroundColor" Value="DarkSlateGray" />
+            <Setter Property="TextColor" Value="#FFF" />
+        </Style>
+
+        <Style x:Key="botaoOperacoes" TargetType="Button" BasedOn="{StaticResource botaocomum}">
+            <Setter Property="BackgroundColor" Value="DarkOrange" />
+            <Setter Property="TextColor" Value="white" />
+        </Style>
     </Application.Resources>
 </Application>
