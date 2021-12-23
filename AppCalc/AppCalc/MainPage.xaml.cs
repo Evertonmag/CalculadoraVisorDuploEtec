@@ -3,6 +3,10 @@ using Xamarin.Forms;
 
 namespace AppCalc
 {
+
+    // Estou utilizando virgula inves de ponto mas se nao funcionar trocar virgula por ponto
+    // pois no meu celular so funcionou com virgula
+
     public partial class MainPage : ContentPage
     {
         double pre = 0;
@@ -11,7 +15,7 @@ namespace AppCalc
         string tela = "";
         string calculo = "";
         string num = "";
-        bool teste = false;
+        bool ponto = false;
 
         public MainPage()
         {
@@ -77,7 +81,6 @@ namespace AppCalc
                     pos = 0;
                 }
             }
-
         }
         void Calcular()
         {
@@ -85,7 +88,7 @@ namespace AppCalc
             {
                 if (calculo == "+" || calculo == "-" || calculo == "×" || calculo == "÷")
                 {
-                    if (teste == true)
+                    if (ponto == true)
                     {
                         teste_sinal();
 
@@ -94,7 +97,7 @@ namespace AppCalc
 
                         txt_visor.Text = "";
                         txt_visor.Text = pre.ToString() + calculo + pos.ToString();
-                        teste = false;
+                        ponto = false;
                     }
                     else
                     {
@@ -109,11 +112,11 @@ namespace AppCalc
                 }
                 else
                 {
-                    if (teste == true)
+                    if (ponto == true)
                     {
                         txt_visor.Text += "," + num;
                         pre = double.Parse(txt_visor.Text);
-                        teste = false;
+                        ponto = false;
                     }
                     else
                     {
@@ -222,7 +225,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Subtrair(object sender, EventArgs e)
@@ -240,7 +243,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                 $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Multiplicar(object sender, EventArgs e)
@@ -258,7 +261,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Dividir(object sender, EventArgs e)
@@ -276,7 +279,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Igual(object sender, EventArgs e)
@@ -300,7 +303,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
 
         }
@@ -337,7 +340,7 @@ namespace AppCalc
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
         private void Button_Clicked_Ponto(object sender, EventArgs e)
@@ -349,21 +352,21 @@ namespace AppCalc
                 if (calculo == "")
                 {
                     if (!txt_visor.Text.Contains("."))
-                        teste = true;
+                        ponto = true;
                 }
                 else
                 {
                     tela = txt_visor.Text;
                     txt_visor.Text = "";
                     if (!txt_visor.Text.Contains("."))
-                        teste = true;
+                        ponto = true;
                     txt_visor.Text = tela;
                 }
             }
             catch (Exception ex)
             {
                 DisplayAlert("Ops", "Algo não deu certo tente novamente mais tarde se persistir o erro " +
-                                "envie para nos qual foi. O erro dado foi: " + ex.Message, "Ok");
+                                $"envie para nos qual foi. O erro dado foi: {ex.Message}", "Ok");
             }
         }
     }
