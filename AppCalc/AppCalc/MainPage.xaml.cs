@@ -46,22 +46,8 @@ namespace AppCalc
         }
         void teste_sinal()
         {
-            if (txt_visor.Text.Contains("+"))
-            {
-                txt_visor.Text = "";
-                txt_visor.Text = pos.ToString();
-            }
-            if (txt_visor.Text.Contains("-"))
-            {
-                txt_visor.Text = "";
-                txt_visor.Text = pos.ToString();
-            }
-            if (txt_visor.Text.Contains("×"))
-            {
-                txt_visor.Text = "";
-                txt_visor.Text = pos.ToString();
-            }
-            if (txt_visor.Text.Contains("÷"))
+            if (txt_visor.Text.Contains("+") || txt_visor.Text.Contains("-") || 
+                txt_visor.Text.Contains("×") || txt_visor.Text.Contains("÷"))
             {
                 txt_visor.Text = "";
                 txt_visor.Text = pos.ToString();
