@@ -26,5 +26,15 @@
             <Setter Property="BackgroundColor" Value="DarkOrange" />
             <Setter Property="TextColor" Value="white" />
         </Style>
+
+        <Style x:Key="fontModify" TargetType="Label">
+            <Setter Property="FontFamily" Value="UbuntuMono-Regular.ttf#UbuntuMono-Regular" />
+        </Style>
+
+        <Style x:Key="Rodape" TargetType="Label" BasedOn="{StaticResource fontModify}">
+            <Setter Property="FontSize" Value="Title" />
+            <Setter Property="TextColor" Value="white" />
+        </Style>
+
     </Application.Resources>
 </Application>
